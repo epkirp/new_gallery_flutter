@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:gateway/dio_authorization_gateway.dart';
+import 'package:new_gallery/di/di.dart';
 import 'package:new_gallery/resources/app_assets.dart';
 import 'package:new_gallery/resources/app_strings.dart';
 import 'package:new_gallery/scenes/sign_in/sign_in_bloc.dart';
@@ -65,7 +65,11 @@ class WelcomeScreen extends StatelessWidget {
     Navigator.of(context).push(
       MaterialPageRoute(
         builder: (_) => MultiBlocProvider(
-          providers: [BlocProvider(create: (_) => SignInBloc(DioAuthorizationGateway()))],
+          providers: [
+            BlocProvider(
+              create: (_) => SignInBloc(injection(), injection()),
+            )
+          ],
           child: SignInScreen(),
         ),
       ),

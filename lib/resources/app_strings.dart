@@ -13,4 +13,8 @@ class AppStrings {
   static const password = "Password";
   static const forgotLoginOrPassword = "Forgot login or password?";
   static const signUp = "Sign Up";
+
+  //input errors
+  static const emptyFiled = "Empty field";
+  static const incorrectEmail = "Incorrect email";
 }
